@@ -16,6 +16,7 @@ def main():
     m_ascii_fnt = Figlet(font="larry3d")
     m_ascii_banner = m_ascii_fnt.renderText("pyzzer")
     print(colored(m_ascii_banner, "blue"))
+    print("by cakehonolulu")
     
     if (len(sys.argv) == 1) or (str(sys.argv[1]) == "-h"):
         print("Usage: pyzzer.py [file] [fuzztype]")
