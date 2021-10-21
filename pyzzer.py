@@ -33,9 +33,9 @@ def main():
         print("Input the string size: ")
         m_strsz = input()
         print("Specify which string options you want (Press ENTER for default options): ")
-        m_stropt = input()
+        m_stropt = str(input())
 
-        m_strarg = 0
+        m_strarg = ""
 
         if len(m_stropt) == 0:
             print("Using default options (Upper(+Lower) case letters, numbers and symbols)...")
@@ -45,9 +45,14 @@ def main():
             print("String options cannot exceed 3 chars!")
             exit()
 
-        #if "a" in m_stropt:
-        #    m_strarg += string.ascii_letters
-        #    print(f"Args for now: {m_strarg}")
+        if "a" in m_stropt:
+            m_strarg += string.ascii_letters
+
+        if "d" in m_stropt:
+            m_strarg += string.digits
+
+        if "p" in m_stropt:
+            m_strarg += string.punctuation
 
         m_rndstr = ''.join(random.choices(m_strarg, k = int(m_strsz)))
         print(f"Random generated string: {m_rndstr}")
