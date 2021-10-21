@@ -1,7 +1,7 @@
 #!/bin/python3
 
 import sys
-import colorama
+from termcolor import colored
 
 import random
 import string
