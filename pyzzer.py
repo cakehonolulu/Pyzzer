@@ -3,6 +3,9 @@
 import sys
 from termcolor import colored
 
+import pyfiglet
+from pyfiglet import Figlet
+
 import random
 import string
 
@@ -10,8 +13,10 @@ from subprocess import Popen, PIPE
 
 # main()
 def main():
-    print("Pyfuzzer - A simple Python Program Fuzzer")
-
+    m_ascii_fnt = Figlet(font="larry3d")
+    m_ascii_banner = m_ascii_fnt.renderText("pyzzer")
+    print(colored(m_ascii_banner, "blue"))
+    
     if (len(sys.argv) == 1) or (str(sys.argv[1]) == "-h"):
         print("Usage: pyzzer.py [file] [fuzztype]")
         print("Fuzzing Types:")
