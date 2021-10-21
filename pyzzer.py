@@ -6,18 +6,34 @@ from subprocess import Popen, PIPE
 # main()
 def main():
     print("Pyfuzzer - A simple Python Program Fuzzer")
-    print(f"Command line arguments: {str(sys.argv[1])}, {str(sys.argv[2])}")
 
-    m_progname = (f"./{str(sys.argv[1])}")
+    try:
+        m_progname = (f"./{str(sys.argv[1])}")
+        print(f"Target: {str(sys.argv[1])}")
+    except IndexError:
+        print(f"No file to fuzz, exiting...")
+        exit()
+    else:
+        pass
 
-    m_fuzzstr = (f"{str(sys.argv[2])}")
+    try:
+        m_fuzzstr = str(sys.argv[2])
+        print(f"Fuzzing method: {sys.argv[2]}")
+    except IndexError:
+        print(f"No fuzzing method given, exiting...")
+        exit()
+    else:
+        pass
 
-    print(f"Program name: {m_progname}")
-    print(f"Fuzzing string: {m_fuzzstr}")
+    if m_fuzzstr == "string":
+        m_fuzzalgo = 1
+
+    if m_fuzzstr == "int":
+        m_fuzzalgo = 2
 
     m_prog = Popen(m_progname, stdin=PIPE)
-    m_prog.communicate(m_fuzzstr.encode())
-
+    #m_prog.communicate(m_fuzzstr.encode())
+#
 # Call main on init
 if __name__ == "__main__":
     main()
