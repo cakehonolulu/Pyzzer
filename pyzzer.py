@@ -3,6 +3,9 @@
 import sys
 from subprocess import Popen, PIPE
 
+import random
+import string
+
 # main()
 def main():
     print("Pyfuzzer - A simple Python Program Fuzzer")
@@ -27,6 +30,12 @@ def main():
 
     if m_fuzzstr == "string":
         m_fuzzalgo = 1
+        print("Input the string size: ")
+        m_strsz = input()
+        m_rndstr = ""
+        m_rndstr = ''.join(random.choices(string.ascii_letters + string.digits + string.punctuation, k = int(m_strsz)))
+        print(f"Random generated string: {m_rndstr}")
+
 
     if m_fuzzstr == "int":
         m_fuzzalgo = 2
