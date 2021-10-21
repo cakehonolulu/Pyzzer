@@ -12,7 +12,7 @@ from subprocess import Popen, PIPE
 def main():
     print("Pyfuzzer - A simple Python Program Fuzzer")
 
-    if sys.argv[1] == "-h":
+    if (len(sys.argv) == 1) or (str(sys.argv[1]) == "-h"):
         print("Usage: pyzzer.py [file] [fuzztype]")
         print("Fuzzing Types:")
         print("string - Generates a customizable string and starts the fuzzing process")
