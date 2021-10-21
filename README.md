@@ -1,0 +1,2 @@
+# Pyzzer
+Simple Python Fuzzer
