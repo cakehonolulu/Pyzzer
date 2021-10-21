@@ -6,7 +6,7 @@ from subprocess import Popen, PIPE
 # main()
 def main():
     print("Pyfuzzer - A simple Python Program Fuzzer")
-    print(f"Command line arguments: {str(sys.argv[1])}")
+    print(f"Command line arguments: {str(sys.argv[1])}, {str(sys.argv[2])}")
 
     m_progname = (f"./{str(sys.argv[1])}")
 
