@@ -32,7 +32,24 @@ def main():
         m_fuzzalgo = 1
         print("Input the string size: ")
         m_strsz = input()
-        m_rndstr = ''.join(random.choices(string.ascii_letters + string.digits + string.punctuation, k = int(m_strsz)))
+        print("Specify which string options you want (Press ENTER for default options): ")
+        m_stropt = input()
+
+        m_strarg = 0
+
+        if len(m_stropt) == 0:
+            print("Using default options (Upper(+Lower) case letters, numbers and symbols)...")
+            m_strarg = string.ascii_letters + string.digits + string.punctuation;
+
+        if len(m_stropt) > 3:
+            print("String options cannot exceed 3 chars!")
+            exit()
+
+        #if "a" in m_stropt:
+        #    m_strarg += string.ascii_letters
+        #    print(f"Args for now: {m_strarg}")
+
+        m_rndstr = ''.join(random.choices(m_strarg, k = int(m_strsz)))
         print(f"Random generated string: {m_rndstr}")
         m_prog = Popen(m_progname, stdin=PIPE)
         m_prog.communicate(m_rndstr.encode())
