@@ -25,7 +25,10 @@ def main():
         exit()
 
     try:
-        m_progname = (f"./{str(sys.argv[1])}")
+        m_progname = (f"{str(sys.argv[1])}")
+        if not m_progname.startswith("/"):
+            m_progname = (f"./{str(sys.argv[1])}")
+
         print(f"Target: {str(sys.argv[1])}")
     except IndexError:
         print(f"No file to fuzz, exiting...")
