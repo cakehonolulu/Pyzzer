@@ -10,6 +10,13 @@ import string
 def main():
     print("Pyfuzzer - A simple Python Program Fuzzer")
 
+    if sys.argv[1] == "-h":
+        print("Usage: pyzzer.py [file] [fuzztype]")
+        print("Fuzzing Types:")
+        print("string - Generates a customizable string and starts the fuzzing process")
+        print("int - Generates a customizable integer and starts the fuzzing process")
+        exit()
+
     try:
         m_progname = (f"./{str(sys.argv[1])}")
         print(f"Target: {str(sys.argv[1])}")
