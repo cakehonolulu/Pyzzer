@@ -34,13 +34,13 @@ def main():
         m_strsz = input()
         m_rndstr = ''.join(random.choices(string.ascii_letters + string.digits + string.punctuation, k = int(m_strsz)))
         print(f"Random generated string: {m_rndstr}")
+        m_prog = Popen(m_progname, stdin=PIPE)
+        m_prog.communicate(m_rndstr.encode())
 
 
     if m_fuzzstr == "int":
         m_fuzzalgo = 2
 
-    m_prog = Popen(m_progname, stdin=PIPE)
-    #m_prog.communicate(m_fuzzstr.encode())
 #
 # Call main on init
 if __name__ == "__main__":
