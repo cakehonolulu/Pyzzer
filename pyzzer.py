@@ -1,10 +1,12 @@
 #!/bin/python3
 
 import sys
-from subprocess import Popen, PIPE
+import colorama
 
 import random
 import string
+
+from subprocess import Popen, PIPE
 
 # main()
 def main():
